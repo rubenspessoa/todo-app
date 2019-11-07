@@ -1,0 +1,6 @@
+<ng-container *ngIf="isActive();else elseBlock">
+  <p>{{ todo.title }}</p>
+</ng-container>
+<ng-template #elseBlock>
+  <p><s>{{ todo.title }}</s></p>
+</ng-template>

@@ -1,0 +1,20 @@
+<h1>todos</h1>
+<input id="todo"
+       name="todo"
+       placeholder="What needs to be done?"
+       type="text"
+       size="140"
+       (keyup.enter)="addTodo()"
+       [(ngModel)]="newTodoTitle">
+<button (click)="addTodo()">Add</button>
+
+<div *ngFor="let todo of todos">
+  <input type="checkbox"
+         (change)="changeState(todo)">
+  <app-todo [todo]="todo"></app-todo>
+  <button (click)="removeTodo(todo)">X</button>
+</div>
+
+<button (click)="getAllTodos()">All</button>
+<button (click)="getActiveTodos()">Active</button>
+<button (click)="getCompletedTodos()">Completed</button>
